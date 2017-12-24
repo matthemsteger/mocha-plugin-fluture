@@ -9,7 +9,8 @@
     "mocha:watch": "mocha --recursive --reporter min --watch --require babel-register \"test/**/*.spec.js\"",
     "lint": "eslint \"**/*.js\" && echo Lint passed.",
     "coverage": "nyc --cache npm run mocha && nyc report --reporter=lcov",
-    "build": "babel src -d dist"
+    "build": "babel src -d dist",
+	"prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
