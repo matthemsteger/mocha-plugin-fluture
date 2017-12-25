@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import {of as futureOf, Future} from 'fluture';
-import flutureRunnable from './../src/flutureRunnable';
+import flutureRunnable from './../src/patch/flutureRunnable';
 
 delete require.cache[require.resolve('mocha/lib/runnable')];
 const Runnable = require('mocha/lib/runnable');
@@ -8,7 +8,7 @@ const Runnable = require('mocha/lib/runnable');
 flutureRunnable(Runnable); // apply plugin
 flutureRunnable(Runnable); // test apply only once
 
-describe('mocha-plugin-fluture', function () {
+describe('mocha-plugin-fluture/patch', function () {
 	describe('synchronous', function () {
 		it('should pass', function (done) {
 			const test = new Runnable('synchronous', function () { });
